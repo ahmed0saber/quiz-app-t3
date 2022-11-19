@@ -58,3 +58,10 @@ span{
     padding-right:  20px;
    
 }
+
+@media screen  and (max-width:940px){
+    .container{
+        width: 90%;
+    }
+    
+}
