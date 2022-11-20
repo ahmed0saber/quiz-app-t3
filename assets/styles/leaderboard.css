@@ -15,14 +15,14 @@ body{
 .navcontainer{
     width: 100%;
    
-    border-bottom: 1px solid rgb(166, 166, 166);
+    border-bottom: 1px solid rgba(187, 186, 186, 0.342);
 
-    margin-bottom:  70px ;
+    margin-bottom:  60px ;
 }
 .navcontainer nav{
     display: flex;
     justify-content: space-between;
-    padding: 10px 25px 0px 25px;
+   padding: 10px 20px;
    
    
 }
@@ -49,49 +49,63 @@ nav a:hover{
     display: none;
 }
 
-.table-container{
+.info-container{
     width: 80%;
-   margin: 30px auto ;
+   margin: 5px auto ;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(187, 186, 186, 0.342);
+    border-bottom: 1px solid rgba(187, 186, 186, 0.342);
+    
+    border-radius: 6px;
+    margin-bottom: 10px;
+   padding: 15px 130px 15px 20px;
+    
+}
+.left {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+.info:nth-child(1){
+    border: none;
 }
 
-.tr1{
-    border-left:  5px solid rgb(223, 82, 82);
-    border-right:  5px solid rgb(223, 82, 82);
-    border-radius:20px;
-    margin-bottom: 10px;
+.info:nth-child(2){
    
+    border-right: 8px solid yellow;
+    border-left: 8px solid yellow;
 }
 
-.tr2{
-    border-left:  5px solid rgb(101, 97, 97);
-    border-right:  5px solid rgb(101, 97, 97);
-    border-radius:20px;
-    margin-bottom: 10px;
+.info:nth-child(3){
+    
+    border-right: 8px solid rgb(157, 157, 156);
+    border-left: 8px solid rgb(157, 157, 156);
+}
+
+.info:nth-child(4){
+    
+    border-right: 8px solid rgb(216, 152, 88);
+    border-left: 8px solid rgb(216, 152, 88);
+}
+
+.info:nth-child(5){
    
+    border-right: 8px solid rgb(35, 88, 112);
+    border-left: 8px solid rgb(35, 88, 112);
 }
-.tr3{
-    border-left:  5px solid rgb(103, 66, 7);
-    border-right:  5px solid rgb(103, 66, 7);
-    border-radius:20px;
-    margin-bottom: 10px;
-   
-}
-.tr4{
-    border-left:  5px solid rgb(76, 15, 217);
-    border-right:  5px solid rgb(76, 15, 217);
-    border-radius:20px;
-    margin-bottom: 10px;
-}
-.tr5{
-    border-left:  5px solid rgb(11, 147, 50);
-    border-right:  5px solid rgb(11, 147, 50);
-    border-radius:20px;
-    margin-bottom: 10px;
+
+.info:nth-child(6){
+    
+    border-right: 8px solid rgb(65, 129, 91);
+    border-left: 8px solid rgb(65, 129, 91);
 }
 
 .footercontainer{
     background-color:rgb(46, 144, 205) ;
-    margin-top: 90px;
+    margin-top: 50px;
     
 }
 footer{
@@ -113,4 +127,14 @@ footer span{
     .menuIcon{
         display: inline;
     }
+    .info-container{
+        width: 90%;
+    }
+    .info{
+        padding-right: 40px;
+    }
+    .left{
+        width: 50%;
+    }
 }
+
