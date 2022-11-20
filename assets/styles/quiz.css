@@ -7,3 +7,150 @@
     outline: none;
     font-family: "Glory", sans-serif;
 }
+
+.quiz-container{
+    width: 80%;
+   height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px #eee;
+    margin: auto;
+    margin-top: 5px;
+    padding-bottom: 10px;
+}
+.div-q{
+    background: #2589BD;
+    width: 98%;
+    height: 100px;
+    border-radius: 5px 5px 0 0 ;
+    margin: auto;
+    position: relative;
+    top: 10px;
+    display: flex;
+}
+.div-one p{
+    color: #fff;
+    margin: 17px;
+    font-size: 20px;
+}
+@media only screen and (min-width: 1200px){
+    .div-one{
+        width: 90%;
+    }
+    
+    .div-two{
+    width: 10%;
+    
+    }
+    .time-div{
+        background-color: #fff;
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        top: 40px;
+        left: 46%;
+        
+    }
+}
+@media only screen and (max-width: 600px) {
+    .div-one{
+        width: 85%;
+    }
+    
+    .div-two{
+    width: 10%;
+    
+    }
+    .time-div{
+        background-color: #fff;
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        top: 40px;
+        
+        
+    }
+}
+.time-div p{
+    color: #2589BD;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+}
+.par-1{
+    margin: 20px 10px;
+    font-size: 20px;
+}
+.div-question{
+    background: #000;
+    width: 98%;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 10px;
+    position: relative;
+    top: 2.5px;
+    color: #fff;
+    font-size: 20px;
+
+}
+.div-question p{
+   position: relative;
+   top: 10px;
+   left: 10px;
+}
+.btn-ans,.btn-back, .btn-check{
+    height: 45px;
+    margin-left: 1%;
+    margin-top: 10px;
+    border: 2px solid #2589BD;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.btn-ans{
+    width: 98%; 
+}
+.btn-ans:hover{
+    border: 2px solid #000;
+}
+.btn-ans p{
+    text-align: left;
+    font-size: 22px;
+    margin-left: 10px;
+}
+.pagination-btns{
+    display: flex;
+  
+}
+
+.btn-back, .btn-check{
+ width: 48.5%;
+}
+.btn-back:hover, .btn-check:hover{
+   background-color: #2589BD;
+   }
+   .btn-back p:hover, .btn-check p:hover{
+       color: #fff;
+   }
+.btn-back p, .btn-check p{
+    color: #2589BD;
+    font-size: 22px;
+}
+.line{
+    border-top: 1px solid #eee;
+    width: 100%;
+    height: 50px;
+    margin-top: 40px;
+}
+.line p{
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.line p span{
+    color: #2589BD;
+
+}
