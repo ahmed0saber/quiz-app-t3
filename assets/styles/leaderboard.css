@@ -6,4 +6,135 @@
     border: none;
     outline: none;
     font-family: "Glory", sans-serif;
+    
 }
+body{
+    height: 100vh;
+}
+
+.navcontainer{
+    width: 100%;
+   
+    border-bottom: 1px solid rgba(187, 186, 186, 0.342);
+
+    margin-bottom:  60px ;
+}
+.navcontainer nav{
+    display: flex;
+    justify-content: space-between;
+   padding: 10px 20px;
+   
+   
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style-type:none ;
+}
+nav span{
+    color: rgb(106, 179, 224);
+}
+nav a {
+    text-decoration: none;
+    color: black;
+}
+nav a:hover{
+    text-decoration: none;
+}
+.active{
+    color: rgb(106, 179, 224);
+}
+.menuIcon{
+    display: none;
+}
+
+.info-container{
+    width: 80%;
+   margin: 5px auto ;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(187, 186, 186, 0.342);
+    border-bottom: 1px solid rgba(187, 186, 186, 0.342);
+    
+    border-radius: 6px;
+    margin-bottom: 10px;
+   padding: 15px 130px 15px 20px;
+    
+}
+.left {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+.info:nth-child(1){
+    border: none;
+}
+
+.info:nth-child(2){
+   
+    border-right: 8px solid yellow;
+    border-left: 8px solid yellow;
+}
+
+.info:nth-child(3){
+    
+    border-right: 8px solid rgb(157, 157, 156);
+    border-left: 8px solid rgb(157, 157, 156);
+}
+
+.info:nth-child(4){
+    
+    border-right: 8px solid rgb(216, 152, 88);
+    border-left: 8px solid rgb(216, 152, 88);
+}
+
+.info:nth-child(5){
+   
+    border-right: 8px solid rgb(35, 88, 112);
+    border-left: 8px solid rgb(35, 88, 112);
+}
+
+.info:nth-child(6){
+    
+    border-right: 8px solid rgb(65, 129, 91);
+    border-left: 8px solid rgb(65, 129, 91);
+}
+
+.footercontainer{
+    background-color:rgb(46, 144, 205) ;
+    margin-top: 50px;
+    
+}
+footer{
+    color: azure;
+    text-align: center;
+  
+}
+footer p{
+    padding: 15px 0px;
+}
+footer span{
+    font-weight: bold;
+}
+
+@media screen  and (max-width:940px){
+    li{
+        display: none;
+    }
+    .menuIcon{
+        display: inline;
+    }
+    .info-container{
+        width: 90%;
+    }
+    .info{
+        padding-right: 40px;
+    }
+    .left{
+        width: 50%;
+    }
+}
+
