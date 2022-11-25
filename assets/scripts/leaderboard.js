@@ -62,7 +62,7 @@
 
  let dataUsers = getLeaderboardData();
  const infoContainer= document.querySelector('.info-container');
- let j = 1;
+ let j = 0;
 
 
 function showScore (){
@@ -72,7 +72,7 @@ function showScore (){
     content += `
     <div class="info">
     <div class="left">
-      <p class="iduser"> ${ j++}</p>
+      <p class="iduser"> ${ ++j}</p>
       <p class="nameuser">${i.user}</p>
     </div>
     <div class="right">
