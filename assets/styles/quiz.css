@@ -55,22 +55,24 @@ nav ul li a:hover {
 
 /* navbar style */
 .quiz-container {
-    width: 80%;
+    width: calc(100% - 20px);
+    max-width: 600px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 2px 2px #eee;
     margin: 20px auto;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
 .div-q {
     background: #2589BD;
-    width: 98%;
-    height: 100px;
+    /* ahmed0saber : why do you use certain height ? */
+    /* height: 100px; */
     border-radius: 5px 5px 0 0;
     margin: auto;
-    position: relative;
-    top: 10px;
+    /* ahmed0saber : do we really need this ? we can use padding top instead */
+    /* position: relative;
+    top: 10px; */
     display: flex;
 }
 
@@ -104,13 +106,12 @@ nav ul li a:hover {
 }
 
 .par-1 {
-    margin: 20px 10px;
+    margin: 20px 0;
     font-size: 20px;
 }
 
 .div-question {
     background: #000;
-    width: 98%;
     height: 100px;
     margin: auto;
     margin-bottom: 10px;
@@ -131,8 +132,10 @@ nav ul li a:hover {
 .btn-back,
 .btn-check {
     height: 45px;
-    margin-left: 1%;
-    margin-top: 10px;
+    /* margin-left: 1%; */
+    /* margin-top: 10px; */
+    /* ahmed0saber : they can be written in a shorter way */
+    margin: 10px 0 0 0;
     border: 2px solid #2589BD;
     border-radius: 5px;
     background-color: #fff;
@@ -140,7 +143,7 @@ nav ul li a:hover {
 }
 
 .btn-ans {
-    width: 98%;
+    width: 100%;
 }
 
 .btn-ans:hover {
@@ -155,12 +158,13 @@ nav ul li a:hover {
 
 .pagination-btns {
     display: flex;
-
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .btn-back,
 .btn-check {
-    width: 48.5%;
+    width: calc(50% - 5px);
 }
 
 .btn-back:hover,
