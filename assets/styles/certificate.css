@@ -108,7 +108,7 @@ nav ul li a:hover {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     display: flex;
-    justify-content: center;
+    padding-left: 210px;
     align-items: center;
     gap: 15px;
 }
@@ -137,4 +137,10 @@ footer a {
     color: #FFF;
     font-weight: bold;
     text-decoration: none;
+}
+@media screen  and (max-width:940px){
+    .btn{
+        padding-left: 110px;
+    }
+    
 }
