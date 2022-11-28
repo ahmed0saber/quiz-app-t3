@@ -52,122 +52,50 @@
 @media only screen and (min-width: 1024px) {
     .body{
         background-color: #343A40;
-        width:98%;
-        height: 900px;
-        margin: 1%;
-    
-    }
-    .main-container{
-        background-color: #F9FAFB;
-        width: 95%;
-        height: 800px;
-        position: relative;
-        top: 50px;
-        left: 2.5%;
-        border: 7px solid #D2D3D5;
-    }
-    .main-container h1{
-        color: #343A40;
-        text-align: center;
-        margin-top: 100px;
-        font-size: 65px;
-        text-transform: uppercase;
-    }
-    .par1{
-        color: #6E7377;
-        text-align: center;
-        font-size: 35px;
-        text-transform: uppercase;
-    }
-    .par2,.par3{
-        text-align: center;
-        font-size: 45px;
-        font-weight: bold;
-    }
-    .par2{
-        color: #343A40;
-        margin-top: 150px; 
-    }
-    .par3{
-        color: #386FB5;
-    }
-    .par4{
-        color: #343A40;
-        font-size: 30px;
-        text-align: center;
-    }
-    .main-div{
-        display: flex;
-        justify-content: space-between;
-        width: 70%;
-        margin: auto;
-        margin-top: 100px;
-    }
-    .one,.two{
-        width: 200px;
-        
-        border-bottom: 3px solid #5E98D2;
-    }
-    .one p , .two p{
-        font-size: 28px;
-        text-align: center;
-        margin-bottom: 5px;
-    }
-    .date{
-        font-size: 28px;
-        text-align: center;
-        margin-top: 5px;
-        font-weight: bold;
-    }
-
-}
-@media (min-width :768px) and (max-width: 1400px) {
-    .body{
-        background-color: #343A40;
-        width:98%;
-        height: 700px;
-        margin: 1%;
+        width:98vw;
+        height:95vh;
+        margin: 1vh;
         
     
     }
     .main-container{
         background-color: #F9FAFB;
-        width: 95%;
-        height: 600px;
+        width: 93vw;
+        height: 90vh;
         position: relative;
-        top: 50px;
-        left: 2.5%;
-        bottom: 50px;
+        top: 2.55vh;
+        left: 2.5vw;
+        bottom: 2.5vh;
         border: 7px solid #D2D3D5;  
     }
     .main-container h1{
         color: #343A40;
         text-align: center;
-        margin-top: 60px;
-        font-size:55px;
+        margin-top:4.5vh;
+        font-size:10vh;
         text-transform: uppercase;
     }
     .par1{
         color: #6E7377;
         text-align: center;
-        font-size: 25px;
+        font-size: 4.3vh;
         text-transform: uppercase;
     }
     .par2,.par3{
         text-align: center;
-        font-size: 35px;
+        font-size: 6.5vh;
         font-weight: bold;
     }
     .par2{
         color: #343A40;
-        margin-top: 70px; 
+        margin-top:11vh; 
     }
     .par3{
         color: #386FB5;
     }
     .par4{
         color: #343A40;
-        font-size: 30px;
+        font-size: 4.7vh;
         text-align: center;
     }
     .main-div{
@@ -175,31 +103,103 @@
         justify-content: space-between;
         width: 70%;
         margin: auto;
-        margin-top: 100px;
+        margin-top:10vh;
     }
     .one,.two{
-        width: 200px;
-        
-        border-bottom: 3px solid #5E98D2;
+        width: 15vw;
+        border-bottom: 0.5vh solid #5E98D2;
     }
     .one p , .two p{
-        font-size: 28px;
+        font-size: 5.5vh;
         text-align: center;
-        margin-bottom: 5px;
+        margin-bottom: 0.3vh;
     }
     .date{
-        font-size: 28px;
+        font-size: 4.7vh;
         text-align: center;
-        margin-top: 5px;
+        margin-top: 0.2vh;
         font-weight: bold;
     }
+
+
+}
+@media (min-width :768px) and (max-width: 1023px) {
+    .body{
+        background-color: #343A40;
+        width:98%;
+        height:50vh;
+        margin: 1%;
+    }
+    .main-container{
+        background-color: #F9FAFB;
+        width: 95%;
+        height: 45vh;
+        position: relative;
+        top: 2.5vh;
+        left: 2.5%;
+        bottom: 2.5vh;
+        border: 7px solid #D2D3D5;  
+    }
+    .main-container h1{
+        color: #343A40;
+        text-align: center;
+        margin-top:3.5vh;
+        font-size:5.5vh;
+        text-transform: uppercase;
+    }
+    .par1{
+        color: #6E7377;
+        text-align: center;
+        font-size: 3.3vh;
+        text-transform: uppercase;
+    }
+    .par2,.par3{
+        text-align: center;
+        font-size: 3.5vh;
+        font-weight: bold;
+    }
+    .par2{
+        color: #343A40;
+        margin-top:3.5vh; 
+    }
+    .par3{
+        color: #386FB5;
+    }
+    .par4{
+        color: #343A40;
+        font-size: 2.8vh;
+        text-align: center;
+    }
+    .main-div{
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: auto;
+        margin-top:5.5vh;
+    }
+    .one,.two{
+        width: 20vw;
+        border-bottom: 0.5vh solid #5E98D2;
+    }
+    .one p , .two p{
+        font-size: 2.5vh;
+        text-align: center;
+        margin-bottom: 0.3vh;
+    }
+    .date{
+        font-size: 2.7vh;
+        text-align: center;
+        margin-top: 0.2vh;
+        font-weight: bold;
+    }
+
 
 }
 @media (min-width :280px) and (max-width: 768px) {
     .body{
         background-color: #343A40;
         width:98%;
-        height: 450px;
+        height:30vh;
         margin: 1%;
         
     
@@ -207,41 +207,41 @@
     .main-container{
         background-color: #F9FAFB;
         width: 95%;
-        height: 350px;
+        height: 25vh;
         position: relative;
-        top: 50px;
+        top: 2.5vh;
         left: 2.5%;
-        bottom: 50px;
+        bottom: 2.5vh;
         border: 7px solid #D2D3D5;  
     }
     .main-container h1{
         color: #343A40;
         text-align: center;
-        margin-top: 50px;
-        font-size:35px;
+        margin-top:1.5vh;
+        font-size:2.5vh;
         text-transform: uppercase;
     }
     .par1{
         color: #6E7377;
         text-align: center;
-        font-size: 15px;
+        font-size: 1.3vh;
         text-transform: uppercase;
     }
     .par2,.par3{
         text-align: center;
-        font-size: 15px;
+        font-size: 1.5vh;
         font-weight: bold;
     }
     .par2{
         color: #343A40;
-        margin-top: 30px; 
+        margin-top:3.5vh; 
     }
     .par3{
         color: #386FB5;
     }
     .par4{
         color: #343A40;
-        font-size: 10px;
+        font-size: 1.2vh;
         text-align: center;
     }
     .main-div{
@@ -249,21 +249,21 @@
         justify-content: space-between;
         width: 70%;
         margin: auto;
-        margin-top: 50px;
+        margin-top:2.5vh;
     }
     .one,.two{
         width: 80px;
         border-bottom: 2px solid #5E98D2;
     }
     .one p , .two p{
-        font-size: 15px;
+        font-size: 1.5vh;
         text-align: center;
-        margin-bottom: 5px;
+        margin-bottom: 0.3vh;
     }
     .date{
-        font-size: 17px;
+        font-size: 1.7vh;
         text-align: center;
-        margin-top: 3px;
+        margin-top: 0.2vh;
         font-weight: bold;
     }
 
