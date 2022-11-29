@@ -42,5 +42,31 @@ const getLeaderboardData = () => {
         },
     ]
 
-    return data
+    return data;
 }
+
+
+let dataUsers = getLeaderboardData();
+const infoContainer = document.querySelector('.info-container');
+let j = 0;
+
+
+function showScore() {
+    dataUsers.map((i) => {
+        let content = '';
+        content += `
+            <div class="info">
+                <div class="left">
+                <p class="iduser"> ${++j}</p>
+                <p class="nameuser">${i.user}</p>
+                </div>
+                <div class="right">
+                <p class="scoreuser">${i.score}</p>
+                </div>
+            </div>
+        `
+        infoContainer.innerHTML += content
+    })
+}
+
+showScore();

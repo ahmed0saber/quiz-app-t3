@@ -78,10 +78,17 @@ nav ul li a:hover {
 }
 
 .left {
-    width: 30%;
+   
     display: flex;
-    justify-content: space-between;
+    gap: 170px;
+   
+   
+   
 }
+.m{
+   margin-left: -15px;
+}
+
 
 .info:nth-child(1) {
     border: none;
@@ -131,5 +138,6 @@ footer a {
 
     .left {
         width: 50%;
+        gap: 90px;
     }
 }
