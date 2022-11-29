@@ -110,19 +110,23 @@ let i = 0;
 let score = 0;
 let questionNumber = questions.length;
 let point = 5;
-let seconds = 60
+let seconds = 60;
 let divQ = document.querySelector(".div-q");
 let qusetionArea = document.querySelector(".question-area > p");
 let codeArea = document.querySelector(".div-question > p");
 let checkBtn = document.querySelector(".btn-check");
+// when page is loaded it add add question and answer buttons and score , timer 
 document.addEventListener("DOMContentLoaded", () => {
+  // quizeSettings() is used to add score and timer
   quizeSettings();
+  //addQusetion(questions[i]) is used to add question
   addQusetion(questions[i]);
-  addAnswer();
+  //selectAnswer() is used to add answer
+  selectAnswer();
 });
+// it will run every time click on next or back  or check to change score and number of question
 function quizeSettings() {
-  let template = document.createElement("div");
-  template.innerHTML = `
+  divQ.innerHTML = `
             <div class="div-one">
                 <p>Quetion number <span class="currentQuestion">${
                   i + 1
@@ -135,9 +139,10 @@ function quizeSettings() {
                 </div>
             </div>
             `;
-  divQ.appendChild(template);
 }
-function timer(){
+// the method of setInterval 
+// set point to two if the timeout
+function timer() {
   if (seconds === 0) {
     let template = `
     <div class="icon">i</div>
@@ -147,24 +152,27 @@ function timer(){
 `;
     showPopup(template);
     clearInterval(timerInterval);
+    point = 2;
   } else {
     seconds -= 1;
-    if(document.querySelector(".time-div p")){
+    if (document.querySelector(".time-div p")) {
       document.querySelector(".time-div p").innerHTML = seconds;
     }
   }
 }
-let timerInterval = setInterval(timer, 1000 );
-
+let timerInterval = setInterval(timer, 1000);
+// it make a popup that appear to worn about something you pass to it tamplate that will appear
 function showPopup(template) {
   document.querySelector(".overlay").style.display = "block";
   let popup = document.querySelector(".popup");
   popup.innerHTML = template;
 }
+// use to close popup by ok button
 function closePopup() {
   document.querySelector(".overlay").style.display = "none";
-  point = 2;
+  
 }
+// use to add qusetion and answers to dom
 function addQusetion(question) {
   qusetionArea.innerHTML = question.question;
   if (question.code !== "") {
@@ -180,9 +188,29 @@ function addQusetion(question) {
     document.querySelector(".answers-area").appendChild(btn);
   });
 }
-checkBtn.addEventListener("click", function () {
+// add selecte class to chosen answer and assign answer index to check button 
+function selectAnswer() {
+  let btnsAnswer = document.querySelectorAll(".btn-ans");
+  btnsAnswer.forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      btnsAnswer.forEach((btn) => {
+        btn.classList.remove("selected");
+      });
+      e.target.classList.add("selected");
+      checkBtn.dataset.answer = e.target.dataset.index;
+    })
+  );
+}
+// check if the user has selected answer or not if not show popup else clearInterval 
+// and disabled all buttons to prevent user from select again 
+// checked selected answer if true add class correct else wrong class
+function goCheck() {
   let btn = document.querySelector(".selected");
   if (btn) {
+    // add new property to questions object [selectedAnswer] the answer the user selected whether the answer wrong or correct to use it again when click back   
+    questions[i].selectedAnswer = checkBtn.dataset.answer;
+    clearInterval(timerInterval);
+    seconds = 61;
     let AllAnswers = document.querySelectorAll(".btn-ans");
     AllAnswers.forEach((ans) => {
       ans.setAttribute("disabled", "disabled");
@@ -195,13 +223,13 @@ checkBtn.addEventListener("click", function () {
             <button class="btn-ok" onclick="closePopup()">ok</button>`;
       showPopup(template);
       score += point;
-      document.querySelector(".score").innerHTML = score;
+      quizeSettings()
     } else {
       btn.classList.add("wrong");
       let AllAnswers = document.querySelectorAll(".btn-ans");
       AllAnswers.forEach((ans) => {
-        if(ans.dataset.index == questions[i].correctAnswer){
-          ans.classList.add('correct');
+        if (ans.dataset.index == questions[i].correctAnswer) {
+          ans.classList.add("correct");
         }
       });
       let template = `
@@ -221,50 +249,103 @@ checkBtn.addEventListener("click", function () {
       `;
     showPopup(template);
   }
-});
-function selectAnswer(element) {
-  checkBtn.dataset.answer = element.dataset.index;
 }
-function addAnswer() {
-  let btnsAnswer = document.querySelectorAll(".btn-ans");
-  btnsAnswer.forEach((btn) =>
-    btn.addEventListener("click", (e) => {
-      btnsAnswer.forEach((btn) => {
-        btn.classList.remove("selected");
-      });
-      e.target.classList.add("selected");
-      selectAnswer(e.target);
-    })
-  );
-}
+
+// check if the user answer the question before or not using [selectedAnswer] which add to questions object when the user checked
+// if the user answer all the question the function check score if greater than 50% [(questions.length * 5) / 2] rerender to leaderboard(not maked yet)
 function goNext() {
   i += 1;
   if (i < questions.length) {
-    document.querySelector(".currentQuestion").innerHTML = i+1;
-    let answersArea = document.querySelector(".answers-area");
-    while (answersArea.hasChildNodes()) {
-      answersArea.removeChild(answersArea.childNodes[0]);
-    }
+    removeQusetion();
+    quizeSettings()
     addQusetion(questions[i]);
-    addAnswer();
-    checkBtn.style.display = "inline-block";
-    document.querySelector(".btn-next").style.display = "none";
-    clearInterval(timerInterval)
-    seconds = 61
-    timerInterval = setInterval(timer, 1000);
-    
-  } else {
-    if(score > (questions.length * 5 / 2)){
-      clearInterval(timerInterval)
+    selectAnswer();
+    if(questions[i].selectedAnswer) {
+      clearInterval(timerInterval);
+      AddWrongAndCorrectClasses()
     }else{
-      let template=
-      document.querySelector('.quiz-container').innerHTML=`
+      checkBtn.style.display = "inline-block";
+      document.querySelector(".btn-next").style.display = "none";
+      timerInterval = setInterval(timer, 1000);
+
+    }
+  } else {
+    if (score >= (questions.length * 5) / 2) {
+      clearInterval(timerInterval);
+      document.querySelector(".quiz-container").innerHTML = `
+      <h2>leaderboard</h2>
+      `;
+    } else {
+      document.querySelector(".quiz-container").innerHTML = `
       <h2>Unfortunately, You have not passed the test..</h2>
       <p>Don't worry, You can try again later.</p>
       <a href='../../index.html' class="back-home"><i class="fa fa-angle-left fa-lg"></i> Back to Home</a>
-      `
-      clearInterval(timerInterval)
+      `;
+      clearInterval(timerInterval);
     }
-
   }
+}
+function goBack() {
+  let btn = document.querySelector(".selected");
+  if (btn) {
+    let btnCorrect = document.querySelector(".btn-ans.correct");
+    let btnwrong = document.querySelector(".btn-ans.wrong");
+    if(btnCorrect || btnwrong) {
+      if (i > 0) {
+        clearInterval(timerInterval);
+        i -= 1;
+        removeQusetion();
+        quizeSettings()
+        addQusetion(questions[i]);
+        AddWrongAndCorrectClasses()
+      }else{
+        let template = `
+        <div class="icon">i</div>
+        <h2>First Question</h2>
+        <p>You can't go back</p>
+        <button class="btn-ok" onclick="closePopup()">ok</button>
+        `;
+      showPopup(template)
+      }
+    }else{
+      let template = `
+      <div class="icon">i</div>
+      <h2>Not Checked</h2>
+      <p>You need to check the correct answer first</p>
+      <button class="btn-ok" onclick="closePopup()">ok</button>
+      `;
+    showPopup(template);
+    }
+    
+  } else {
+    let template = `
+      <div class="icon">i</div>
+      <h2>Choose first</h2>
+      <button class="btn-ok" onclick="closePopup()">ok</button>
+      `;
+    showPopup(template);
+  }
+}
+// used when back or next button is clicked to remove question from dom 
+function removeQusetion() {
+  let answersArea = document.querySelector(".answers-area");
+  while (answersArea.hasChildNodes()) {
+    answersArea.removeChild(answersArea.childNodes[0]);
+  }
+}
+// used when back button is clicked or next button is clicked and the user answer that question (to add wrong and correct classes ) 
+function AddWrongAndCorrectClasses(){
+  let AllAnswers = document.querySelectorAll(".btn-ans");
+        AllAnswers.forEach((ans) => {
+          ans.setAttribute("disabled", "disabled");
+          if (ans.dataset.index === questions[i].selectedAnswer) {
+            ans.classList.add("wrong");
+          }
+          if (ans.dataset.index == questions[i].correctAnswer) {
+            ans.classList.add("correct");
+            ans.classList.add("selected");
+          }
+        });
+      checkBtn.style.display = "none";
+      document.querySelector(".btn-next").style.display = "inline-block";
 }
