@@ -1,5 +1,5 @@
 const sharingText = "I'm excited to share that I have passed HTML exam and got certified at Quiz App."
- const sharingUrl = "https://github.com/"
+const sharingUrl = "https://github.com/"
 
 
 function shareToFacebook(){
@@ -15,7 +15,7 @@ function shareToLinkedIn(){
 }
 
 function shareToTwitter(){
-     window.open(`https://twitter.com/intent/tweet?text=${sharingText} Test your skills now &url=${sharingUrl}`)
+    window.open(`https://twitter.com/intent/tweet?text=${sharingText} Test your skills now &url=${sharingUrl}`)
 }
 
 function shareToTelegram(){

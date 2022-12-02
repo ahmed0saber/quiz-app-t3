@@ -108,9 +108,10 @@ nav ul li a:hover {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     display: flex;
-    padding-left: 210px;
+    justify-content: center;
     align-items: center;
     gap: 15px;
+    text-decoration: none;
 }
 
 .btn:last-child {
