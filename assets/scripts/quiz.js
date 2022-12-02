@@ -177,6 +177,7 @@ function addQusetion(question) {
   qusetionArea.innerHTML = question.question;
   if (question.code !== "") {
     codeArea.innerText = question.code;
+    document.querySelector(".div-question").style.display = "block";
   } else {
     document.querySelector(".div-question").style.display = "none";
   }
@@ -267,19 +268,16 @@ function goNext() {
       checkBtn.style.display = "inline-block";
       document.querySelector(".btn-next").style.display = "none";
       timerInterval = setInterval(timer, 1000);
-
     }
   } else {
     if (score >= (questions.length * 5) / 2) {
       clearInterval(timerInterval);
-      document.querySelector(".quiz-container").innerHTML = `
-      <h2>leaderboard</h2>
-      `;
+      window.location.href = "../../certificate/"
     } else {
       document.querySelector(".quiz-container").innerHTML = `
       <h2>Unfortunately, You have not passed the test..</h2>
       <p>Don't worry, You can try again later.</p>
-      <a href='../../index.html' class="back-home"><i class="fa fa-angle-left fa-lg"></i> Back to Home</a>
+      <a href='../../' class="back-home"><i class="fa fa-angle-left fa-lg"></i> Back to Home</a>
       `;
       clearInterval(timerInterval);
     }
