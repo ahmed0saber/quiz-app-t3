@@ -37,3 +37,25 @@ twitterBtn.addEventListener('click',shareToTwitter);
 telegramBtn.addEventListener('click',shareToTelegram);
 linkedinBtn.addEventListener('click',shareToLinkedIn);
 whatsAppBtn.addEventListener('click',shareToWhatsApp);
+certificateBtn.addEventListener('click', () => {
+    const nameInput = document.querySelector(".askedName input")
+    if(nameInput.value.trim().length < 1){
+        alert("Enter username first")
+        return
+    }
+    const certificateDate = new Date()
+    sessionStorage.setItem("username", nameInput.value.trim())
+    sessionStorage.setItem("date", formatDate(certificateDate))
+    window.location.href = "../../get-certificate"
+})
+
+function formatDate(givenDate) {
+    const yyyy = givenDate.getFullYear()
+    let mm = givenDate.getMonth() + 1
+    let dd = givenDate.getDate()
+    if (dd < 10) dd = '0' + dd
+    if (mm < 10) mm = '0' + mm
+    const formattedDate = `${dd}/${mm}/${yyyy}`
+
+    return formattedDate
+}

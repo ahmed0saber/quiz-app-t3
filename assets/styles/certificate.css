@@ -139,9 +139,3 @@ footer a {
     font-weight: bold;
     text-decoration: none;
 }
-@media screen  and (max-width:940px){
-    .btn{
-        padding-left: 110px;
-    }
-    
-}

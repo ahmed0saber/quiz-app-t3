@@ -376,6 +376,7 @@
     -o-border-radius: 4px;
     text-decoration: none;
     gap: 6px;
+    cursor: pointer;
 }
 .certificateBtns button:hover, .certificateBtns a:hover{
     background-color: #F8F9FA;

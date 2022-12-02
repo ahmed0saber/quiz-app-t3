@@ -50,12 +50,12 @@
                 </div>
                 <div class='certificateBody'>
                     <h3>This certificate is presented to</h3>
-                    <h4>{username}</h4>
-                    <p>For passing HTML at Quiz App</p>
+                    <h4 class="certificate-username">{username}</h4>
+                    <p>For passing HTML test at Quiz App</p>
                 </div>
                 <div class='certificateFooter'>
                     <div>
-                        <p>{certificateDate}</p>
+                        <p class="certificate-date">{certificateDate}</p>
                         <span></span>
                         <h4>Date</h4>
                     </div>
@@ -72,7 +72,7 @@
                 <i class="fa fa-angle-left"></i>
                 To Home
             </a>
-            <button>Download</button>
+            <button class="print-certificate">Download</button>
         </div>
     </div>
 
@@ -80,5 +80,6 @@
         <p class="footer-par">Developed by <span>ebtisamalbasuney</span></p>
     </div>
 </body>
-<script src='./script.js'></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src='../assets/scripts/getcertificate.js'></script>
 </html>
