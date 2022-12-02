@@ -62,12 +62,94 @@ nav ul li a:hover {
     box-shadow: 0 0 2px 2px #eee;
     margin: 20px auto;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+@media (max-width: 567px) {
+    .quiz-container{
+        width: 90%;
+        max-width: 90%;
+    }
 }
 
+.overlay{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.overlay .popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50% , -50%);
+    -moz-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    -o-transform: translate(-50% , -50%);
+    background-color: white;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    width: 32em;
+    max-width: 95%;
+}
+.overlay .popup .icon{
+    color: #3fc3ee;
+    border: 4px solid #9de0f6;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    text-align: center;
+    font-size: 3.75rem;
+    width: 75px;
+    height: 75px;
+}
+.overlay .popup .icon.correct{
+    border-color:rgba(165,220,134,.3) ;
+    color: #a5dc86;
+}
+.overlay .popup .icon.wrong{
+    color: #f27474;
+    border-color:#f27474 ;
+}
+.overlay .popup p{
+    text-align: center;
+}
+.overlay .popup .btn-ok{
+    font-size: 1.3rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+.overlay .popup .btn-ok:hover{
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1));
+}
 .div-q {
     background: #2589BD;
     border-radius: 5px 5px 0 0;
-    margin: auto;
     display: flex;
 }
 
@@ -101,13 +183,11 @@ nav ul li a:hover {
 }
 
 .par-1 {
-    margin: 20px 0;
     font-size: 20px;
 }
 
 .div-question {
     background: #000;
-    height: 100px;
     margin: auto;
     margin-bottom: 10px;
     position: relative;
@@ -118,26 +198,47 @@ nav ul li a:hover {
 }
 
 .div-question p {
-    position: relative;
-    top: 10px;
-    left: 10px;
+    padding: 10px;
+    word-break: break-word;
 }
 
 .btn-ans,
 .btn-back,
-.btn-check {
+.btn-check,
+.btn-next {
     height: 45px;
     margin: 10px 0 0 0;
     border: 2px solid #2589BD;
     border-radius: 5px;
     background-color: #fff;
     cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .btn-ans {
     width: 100%;
+    font-size: 1.25rem;
 }
-
+.btn-ans:disabled{
+    color: black;
+}
+.btn-ans.selected{
+    background-color: #007bff55;
+    border-color:#007bff55 ;
+}
+.btn-ans.wrong{
+    background-color: #dc3545;
+    border-color:#dc3545 ; 
+    color: white;  
+}
+.btn-ans.correct{
+    background-color: #28a745;
+    border-color:#28a745 ;
+    color: white;
+}
 .btn-ans:hover {
     border: 2px solid #000;
 }
@@ -155,26 +256,50 @@ nav ul li a:hover {
 }
 
 .btn-back,
-.btn-check {
+.btn-check,
+.btn-next {
     width: calc(50% - 5px);
 }
 
 .btn-back:hover,
-.btn-check:hover {
+.btn-check:hover,
+.btn-next:hover {
     background-color: #2589BD;
 }
 
 .btn-back:hover p,
-.btn-check:hover p {
+.btn-check:hover p,
+.btn-next:hover p {
     color: #fff;
 }
 
 .btn-back p,
-.btn-check p {
+.btn-check p,
+.btn-next p {
     color: #2589BD;
     font-size: 22px;
 }
-
+.btn-next{
+    display: none;
+}
+.back-home{
+    width: 100%;
+    background-color: #2589BD;
+    color: white;
+    padding: 5px 0;
+    border: 3px solid #2589BD;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.back-home:hover{
+    background-color: white;
+    color: #2589BD;
+}
 /* footer style */
 footer {
     background-color: #2589BD;

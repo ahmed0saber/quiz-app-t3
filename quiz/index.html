@@ -5,10 +5,6 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Quiz | Quiz App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='../assets/styles/quiz.css'>
 </head>
@@ -30,40 +26,32 @@
     </nav>
     <!-- navbar end -->
     <div class="quiz-container">
+        <div class="overlay">
+            <div class="popup"></div>
+        </div>
         <div class="div-q">
-            <div class="div-one">
-                <p>Quetion number <span>1</span> out of <span>50</span></p>
-                <p>Score : <span>0</span></p>
-            </div>
-            <div class="div-two">
-                <div class="time-div">
-                    <p>0</p>
-                </div>
-            </div>
+            
         </div>
-        <p class="par-1">Complete the following code to output 'Hello World!' </p>
+        <div class="question-area">
+            <p class="par-1"></p>
         <div class="div-question">
-            <p> int main (){<br /> ..... << "hello world!" ; <br>}</p>
+            <p></p>
         </div>
-        <button class="btn-ans">
-            <p>cin</p>
-        </button>
-        <button class="btn-ans">
-            <p>cout</p>
-        </button>
-        <button class="btn-ans">
-            <p>output</p>
-        </button>
-        <button class="btn-ans">
-            <p>write</p>
-        </button>
+        <div class="answers-area">
+
+        </div>
+        </div>
+        
 
         <div class="pagination-btns">
-            <button class="btn-back">
+            <button class="btn-back"  onclick="goBack()">
                 <p> <i class="fa fa-angle-left fa-lg"></i> Back</p>
             </button>
-            <button class="btn-check">
+            <button class="btn-check" onclick="goCheck()">
                 <p> Check <i class="fa fa-check"></i></p>
+            </button>
+            <button class="btn-next" onclick="goNext()">
+                <p> next <i class="fa fa-angle-right fa-lg"></i></p>
             </button>
         </div>
 
