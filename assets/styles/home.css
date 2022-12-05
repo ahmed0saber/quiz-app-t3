@@ -125,13 +125,19 @@ footer {
     color: white;
     display: flex;
     justify-content: center;
-    padding: 15px 0;
+    padding: 14px 8px;
     font-size: 18px;
+    text-align: center;
 }
 
 footer a {
     color: #FFF;
     font-weight: bold;
 }
-
 /* footer style */
+
+@media(max-width: 375px){
+    .landing-sec .content .btn{
+        padding: 8px;
+    }
+}

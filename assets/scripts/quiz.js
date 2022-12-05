@@ -272,6 +272,7 @@ function goNext() {
   } else {
     if (score >= (questions.length * 5) / 2) {
       clearInterval(timerInterval);
+      sessionStorage.setItem('score', score)
       window.location.href = "../../certificate/"
     } else {
       document.querySelector(".quiz-container").innerHTML = `

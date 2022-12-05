@@ -31,18 +31,25 @@ const whatsAppBtn =document.querySelector('.whatsAppBtn');
 const linkedinBtn =document.querySelector('.linkedinBtn');
 const twitterBtn =document.querySelector('.twitterBtn');
 const telegramBtn =document.querySelector('.telegramBtn');
+const score = sessionStorage.getItem('score')
+const nameInput = document.querySelector(".askedName input")
 
 faceBookBtn.addEventListener('click',shareToFacebook);
 twitterBtn.addEventListener('click',shareToTwitter);
 telegramBtn.addEventListener('click',shareToTelegram);
 linkedinBtn.addEventListener('click',shareToLinkedIn);
 whatsAppBtn.addEventListener('click',shareToWhatsApp);
+
 certificateBtn.addEventListener('click', () => {
-    const nameInput = document.querySelector(".askedName input")
     if(nameInput.value.trim().length < 1){
         alert("Enter username first")
         return
     }
+
+    let leaderboardData = getLeaderboardDataFromLocalStorage()
+    leaderboardData = setScoreInSortedPosition(leaderboardData)
+    setLeaderboardDataToLocalStorage(leaderboardData)
+
     const certificateDate = new Date()
     sessionStorage.setItem("username", nameInput.value.trim())
     sessionStorage.setItem("date", formatDate(certificateDate))
@@ -58,4 +65,39 @@ function formatDate(givenDate) {
     const formattedDate = `${dd}/${mm}/${yyyy}`
 
     return formattedDate
+}
+
+function getLeaderboardDataFromLocalStorage(){
+    if(localStorage.getItem("leaderboard")){
+        return JSON.parse(localStorage.getItem("leaderboard"))
+    }
+    return []
+}
+
+function setLeaderboardDataToLocalStorage(data){
+    localStorage.setItem("leaderboard", JSON.stringify(data))
+}
+
+function setScoreInSortedPosition(arr){
+    let tempArray = [], rightPositionIsFound = false
+    for(let i = 0; i < arr.length; ){
+        if(arr[i].score >= score || rightPositionIsFound){
+            tempArray.push(arr[i])
+            i++
+        }else{
+            tempArray.push({
+                username: nameInput.value.trim(),
+                score: score
+            })
+            rightPositionIsFound = true
+        }
+    }
+    if(!rightPositionIsFound){
+        tempArray.push({
+            username: nameInput.value.trim(),
+            score: score
+        })
+    }
+
+    return tempArray
 }

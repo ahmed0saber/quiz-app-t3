@@ -270,7 +270,7 @@
 } */
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -279,14 +279,60 @@
     outline: none;
     font-family: "Glory", sans-serif;
 }
-.certificateContainer{
+
+.blue-color {
+    color: #2589BD;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    box-shadow: 0px 2px 2px rgba(50, 50, 50, 0.08);
+    padding: 10px 20px;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Glory';
+}
+
+nav .container .logo {
+    font-size: 1.5rem;
+}
+
+nav .container ul {
+    display: flex;
+    gap: 16px;
+}
+
+nav .container ul li {
+    font-size: 16px;
+}
+
+nav .container ul li a.active,
+nav ul li a:hover {
+    color: #2589BD;
+}
+
+.certificateContainer {
     width: calc(100% - 20px);
     aspect-ratio: 10/7;
     margin: 10px auto;
     border: 4vw solid #343A40;
     color: #343A40;
 }
-.certificateContainer > div{
+
+.certificateContainer>div {
     border: 0.5vw solid #343A4032;
     width: 100%;
     aspect-ratio: 10/7;
@@ -298,66 +344,81 @@
     gap: 1vw;
     text-align: center;
 }
-.certificateHeader{
+
+.certificateHeader {
     display: flex;
     flex-direction: column;
     gap: 0.1vw;
 }
-.certificateHeader h2{
+
+.certificateHeader h2 {
     font-size: 4vw;
 }
-.certificateHeader h4{
+
+.certificateHeader h4 {
     font-size: 2vw;
     opacity: 0.7;
 }
-.certificateBody{
+
+.certificateBody {
     display: flex;
     flex-direction: column;
     gap: 0.5vw;
 }
-.certificateBody h3{
+
+.certificateBody h3 {
     font-size: 3vw;
 }
-.certificateBody h4{
+
+.certificateBody h4 {
     font-size: 3vw;
     color: #007BFF;
 }
-.certificateBody p{
+
+.certificateBody p {
     font-size: 2vw;
 }
-.certificateFooter{
+
+.certificateFooter {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
     width: 100%;
 }
-.certificateFooter > div{
+
+.certificateFooter>div {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
-.certificateFooter p{
+
+.certificateFooter p {
     font-size: 2vw;
 }
-.certificateFooter span{
+
+.certificateFooter span {
     width: 12vw;
     height: 0.2vw;
     background-color: #007BFF;
     margin: 0.1vw 0;
     opacity: 0.7;
 }
-.certificateFooter h4{
+
+.certificateFooter h4 {
     font-size: 2vw;
 }
-.certificateBtns{
+
+.certificateBtns {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 10px 10px 10px;
 }
-.certificateBtns button, .certificateBtns a{
+
+.certificateBtns button,
+.certificateBtns a {
     padding: 8px 28px;
     background-color: #007BFF;
     color: #F8F9FA;
@@ -378,27 +439,56 @@
     gap: 6px;
     cursor: pointer;
 }
-.certificateBtns button:hover, .certificateBtns a:hover{
+
+.certificateBtns button:hover,
+.certificateBtns a:hover {
     background-color: #F8F9FA;
     color: #007BFF;
     border: 2px solid #007BFF;
 }
-.certificateBtns button:active, .certificateBtns a:active{
+
+.certificateBtns button:active,
+.certificateBtns a:active {
     background-color: #343A40;
     border: 2px solid #343A40;
     color: #F8F9FA;
 }
 
-.footer{
+/* .footer {
     width: 100%;
     border-top: 1px solid rgb(197, 195, 195);
     padding: 8px;
 }
-.footer-par{
+
+.footer-par {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
-.footer-par span{
+
+.footer-par span {
     color: #456FB5;
+} */
+
+/* footer style */
+:root {
+    --base-color: #2589BD;
 }
+a{
+    text-decoration: none;
+}
+footer {
+    background-color: var(--base-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 14px 8px;
+    font-size: 18px;
+    text-align: center;
+}
+
+footer a {
+    color: #FFF;
+    font-weight: bold;
+}
+/* footer style */

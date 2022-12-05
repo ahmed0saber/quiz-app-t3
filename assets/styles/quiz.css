@@ -301,19 +301,24 @@ nav ul li a:hover {
     color: #2589BD;
 }
 /* footer style */
+:root {
+    --base-color: #2589BD;
+}
+a{
+    text-decoration: none;
+}
 footer {
-    background-color: #2589BD;
+    background-color: var(--base-color);
     color: white;
     display: flex;
     justify-content: center;
-    padding: 15px 0;
+    padding: 14px 8px;
     font-size: 18px;
+    text-align: center;
 }
 
 footer a {
     color: #FFF;
     font-weight: bold;
-    text-decoration: none;
 }
-
 /* footer style */
