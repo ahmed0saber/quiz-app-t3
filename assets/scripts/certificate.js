@@ -53,7 +53,7 @@ certificateBtn.addEventListener('click', () => {
     const certificateDate = new Date()
     sessionStorage.setItem("username", nameInput.value.trim())
     sessionStorage.setItem("date", formatDate(certificateDate))
-    window.location.href = "../../get-certificate"
+    window.location.href = "../get-certificate"
 })
 
 function formatDate(givenDate) {

@@ -273,12 +273,12 @@ function goNext() {
     if (score >= (questions.length * 5) / 2) {
       clearInterval(timerInterval);
       sessionStorage.setItem('score', score)
-      window.location.href = "../../certificate/"
+      window.location.href = "../certificate/"
     } else {
       document.querySelector(".quiz-container").innerHTML = `
       <h2>Unfortunately, You have not passed the test..</h2>
       <p>Don't worry, You can try again later.</p>
-      <a href='../../' class="back-home"><i class="fa fa-angle-left fa-lg"></i> Back to Home</a>
+      <a href='../' class="back-home"><i class="fa fa-angle-left fa-lg"></i> Back to Home</a>
       `;
       clearInterval(timerInterval);
     }
